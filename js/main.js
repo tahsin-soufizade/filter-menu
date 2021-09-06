@@ -1,3 +1,4 @@
+// data
 const menu = [
 
     {
@@ -47,32 +48,34 @@ const menu = [
     },
 ];
 
-
+// elements
 const form = document.querySelector('#filter-form');
 const selectInput = document.querySelector('#select-input');
 const searchInput = document.querySelector('#search-input');
 const menuWrapper = document.querySelector('.filter-result');
 
+
 let lastCategory = selectInput.value;
 let lastSearch = '';
 
+// helper variables
 let categoryGroup = [];
 let finalGroup = menu;
 
+// set data in DOM
 updateDisplay();
 
-finalGroup = [];
-
+// event
 form.addEventListener('submit', selectCategory);
 
 function selectCategory(e) {
     e.preventDefault();
+
     categoryGroup = [];
     finalGroup = [];
 
-    // if select value didnt change and search input was empty , go out of function
-    if (selectInput.value === lastCategory && searchInput.value === lastSearch) {
-        console.log('empty');
+    // if select value was the last value that we selected And search input was empty , go out from function
+    if (selectInput.value === lastCategory && searchInput.value.trim() === lastSearch) {
         return;
     } else {
         lastCategory = selectInput.value;
@@ -85,8 +88,9 @@ function selectCategory(e) {
             selectMenuItem();
             // get all of the items whitout all value
         } else {
+            const selectedValue = selectInput.value;
             menu.forEach(item => {
-                if (item.type === selectInput.value) {
+                if (item.type === selectedValue) {
                     categoryGroup.push(item);
                 }
             });
@@ -94,8 +98,6 @@ function selectCategory(e) {
         }
     }
 
-    // clear input value
-    // searchInput.value = '';
 }
 
 // selected items
@@ -114,14 +116,17 @@ function selectMenuItem() {
     }
 }
 
-// set all items as result
+// set all items as result if exist
 function updateDisplay() {
     // clear menu wrapper list
     while (menuWrapper.firstChild) {
         menuWrapper.removeChild(menuWrapper.firstChild);
     }
-    if (!finalGroup) {
-        console.log('final group is empty');
+
+    // show message if items doesnt exist
+    if (finalGroup.length === 0) {
+        const emptyMessage = `<h1 class='not-find-parag'>No Item Find! 😕</h1>`;
+        menuWrapper.innerHTML = emptyMessage;
     } else {
         finalGroup.forEach(item => {
             const menuItem = `
@@ -131,6 +136,6 @@ function updateDisplay() {
                 </div>
         `
             menuWrapper.innerHTML += menuItem;
-        })
+        });
     }
 }
