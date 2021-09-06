@@ -168,21 +168,11 @@ header h1 {
 .filter-wrapper .filter-result .filter-img .img-caption {
     position: absolute;
     width: 100%;
-    height: 100%;
-    top: 0;
+    bottom: 0;
     left: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    text-align: center;
     background-color: rgba(0, 0, 0, .7);
-    font-size: 3rem;
+    font-size: 2rem;
     color: #fff;
-    transform: rotate(180deg);
-    transform-origin: left top;
-    transition: all .4s;
-    border-radius: 10px;
-}
-
-.filter-wrapper .filter-result .filter-img:hover .img-caption {
-    transform: rotate(0);
+    box-shadow: 0 0 7px rgba(255, 255, 255, .4)
 }
