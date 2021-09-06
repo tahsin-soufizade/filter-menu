@@ -20,7 +20,7 @@ body {
 
 header {
     text-align: center;
-    margin: 2rem;
+    margin: 2rem 0;
 }
 
 header h1 {
@@ -41,7 +41,7 @@ header h1 {
 /********************************** filter tools wrapper */
 
 .filter-wrapper .filter-tools {
-    width: 40%;
+    width: 35%;
     background-color: #3bd6db;
     box-shadow: 0 0 10px 2px rgba(0, 0, 0, .2);
     border-radius: 3px;
@@ -132,7 +132,7 @@ header h1 {
 /********************************** filter result wrapper */
 
 .filter-wrapper .filter-result {
-    width: 60%;
+    width: 65%;
     background-color: #3bd6db;
     box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, .2);
     border-radius: 3px;
@@ -141,7 +141,7 @@ header h1 {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1.8rem;
+    gap: 1.5rem;
 }
 
 
@@ -175,4 +175,92 @@ header h1 {
     font-size: 2rem;
     color: #fff;
     box-shadow: 0 0 7px rgba(255, 255, 255, .4)
+}
+
+
+/***************************** Responsize Code *************************/
+
+@media screen and (max-width: 1400px) {
+    /* image wrapper */
+    .filter-wrapper .filter-result .filter-img {
+        width: 290px;
+        height: 290px;
+    }
+}
+
+@media screen and (max-width: 1280px) {
+    /* image wrapper */
+    .filter-wrapper .filter-result .filter-img {
+        width: 270px;
+        height: 270px;
+    }
+    /* image caption text */
+    .filter-wrapper .filter-result .filter-img .img-caption {
+        font-size: 1.5rem;
+        padding: .3rem;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    /* filter result */
+    .filter-wrapper .filter-result {
+        width: 60%;
+    }
+    /* filter tools */
+    .filter-wrapper .filter-tools {
+        width: 40%;
+    }
+    /* image wrapper */
+    .filter-wrapper .filter-result .filter-img {
+        width: 100%;
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 860px) {
+    .filter-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .filter-wrapper .filter-result {
+        width: 75%;
+    }
+    .filter-wrapper .filter-tools {
+        width: 75%;
+    }
+    /* image wrapper */
+    .filter-wrapper .filter-result .filter-img {
+        width: 100%;
+        height: 320px;
+    }
+}
+
+@media screen and (max-width: 670px) {
+    .filter-wrapper .filter-result {
+        width: 100%;
+    }
+    .filter-wrapper .filter-tools {
+        width: 100%;
+    }
+    /* image wrapper */
+    .filter-wrapper .filter-result .filter-img {
+        width: 100%;
+        height: 340px;
+    }
+    /* top title in header */
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 440px) {
+    /* image wrapper */
+    .filter-wrapper .filter-result .filter-img {
+        width: 100%;
+        height: 250px;
+    }
+    /* top title in header */
+    header h1 {
+        font-size: 1.6rem;
+    }
 }
