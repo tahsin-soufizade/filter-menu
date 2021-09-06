@@ -154,6 +154,14 @@ header h1 {
     overflow: hidden;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, .4);
     position: relative;
+    transform: translateY(-20px);
+    animation: show-anim .4s ease forwards;
+}
+
+@keyframes show-anim {
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .filter-wrapper .filter-result .filter-img img {
