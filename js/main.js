@@ -98,6 +98,8 @@ function selectCategory(e) {
         }
     }
 
+    // clear input value
+    searchInput.value = '';
 }
 
 // selected items
